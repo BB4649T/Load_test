@@ -1,0 +1,11 @@
+config:
+  target: "https://2s4kqkbkpozg2oh4levm6ssudu0tmfkj.lambda-url.eu-west-3.on.aws"
+  phases:
+    - duration: 60   # 1 minute
+      arrivalRate: 50 # 50 requêtes par seconde
+  processor: "./processor.js" # Fichier optionnel pour le post-traitement
+
+scenarios:
+  - flow:
+    - get:
+        url: "/stored-int"
